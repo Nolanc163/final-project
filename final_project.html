@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clock</title>
+      <link rel= "stylesheet" href ="final_project.css">
+  </head>
+<body>
+
+  <header>
+    <div class="container">
+
+      <nav>
+        <ul>
+          <li><a href="#">Stop Watch</a></li>
+          <li><a href="#">Alarm</a></li>
+          <li><a href="#">Timer</a></li>
+          <li><a href="#">Clock</a></li>
+          <li><a href="#">Countdown</a></li>
+        </ul>
+      </nav>
+
+
+    </div>
+  </header>
+
+</body>
+  <p id="demo"></p>
+
+  <script>
+  var countDownDate = new Date("June 12, 2019 16:00:30").getTime();
+
+  var x = setInterval(function() {
+
+    var now = new Date().getTime();
+
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "time up";
+    }
+  }, 1000);
+  </script>
