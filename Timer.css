@@ -1,8 +1,23 @@
+
 body{
   background-color: #2c2c21;
 
   font-family:'Work Sans', sans-serif;
+
+  text-align: center;
 }
+
+p{
+  font-size: 190px;
+  color: #efefef;
+}
+
+
+
+
+
+
+
 
 
 
@@ -68,4 +83,5 @@ nav a::before{
 
 nav a:hover::before{
   width: 100%;
+
 }

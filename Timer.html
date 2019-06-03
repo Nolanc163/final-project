@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timer</title>
+      <link rel= "stylesheet" href ="Timer.css">
+  </head>
+<body>
+  <header>
+    <div class="container">
+
+      <nav>
+        <ul>
+          <li><a href="file:///C:/Users/Owner/Google%20Drive/nolan%20HTML/Stopwatch.html">Stopwatch</a></li>
+          <li><a href="file:///C:/Users/nolan77197/Desktop/nolan%20HTML/Alarm.html">Timer</a></li>
+          <li><a href="file:///C:/Users/Owner/Google%20Drive/nolan%20HTML/Clock.html">Clock</a></li>
+        </ul>
+      </nav>
+
+
+    </div>
+  </header>
+
+</body>
+
+<p id="demo"></p>
+<script>
+var countDownDate = new Date("June 12, 2019 16:00:30").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "time up";
+  }
+}, 1000);
+</script>
